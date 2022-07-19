@@ -4,8 +4,7 @@ import numpy
 import os
 size = 4
 haar_file = 'haarcascade_frontalface_default.xml'
-datasets = 'D:\\coffeee\\Proctoring\\face detection\\datasets'  #All the faces data will be present this folder
-# Part 1: Create fisherRecognizer
+datasets = 'D:\\coffeee\\face detection\\datasets'  #All the faces data will be present this folder
 print('Recognizing Face Please Be in sufficient Light Conditions...')
 # Create a list of images and a list of corresponding names
 (images, lables, names, id) = ([], [], {}, 0)
@@ -19,7 +18,7 @@ for (subdirs, dirs, files) in os.walk(datasets):
             images.append(cv2.imread(path, 0))
             lables.append(int(lable))
         id += 1
-(width, height) = (130, 100)
+(width, height) = (230, 200)
 
 # Create a Numpy array from the two lists above
 (images, lables) = [numpy.array(lis) for lis in [images, lables]]
